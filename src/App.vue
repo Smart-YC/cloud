@@ -14,7 +14,7 @@
         </el-menu>
       </div>
     </el-header>
-    <main>
+    <main v-loading="loading">
       <router-view class="view"></router-view>
     </main>
 
@@ -28,7 +28,8 @@
     data: function () {
       return {
         active: true,
-        currentDate: new Date()
+        currentDate: new Date(),
+        loading: true
       }
     },
     computed: {

@@ -11,14 +11,22 @@
     name: "home",
     data() {
       return {
-        list: []
+        list: [],
+        loading: false
       }
     },
     created: function () {
+      this.openFullScreen();
       console.group('created 创建完毕状态===============》');
       this.get_data();
     },
     methods: {
+      openFullScreen() {
+        this.fullscreenLoading = true;
+        setTimeout(() => {
+          this.fullscreenLoading = false;
+        }, 2000);
+      },
       get_data: function () {
         let v = this;
         console.group('created 调用方法===============》');
