@@ -8,18 +8,18 @@
     <el-row :gutter="20">
       <el-col :span="8">
         <div class="grid-content bg-purple">
-          <img src="../assets/images/promotion/starbucks-tmall-0312-cn.jpg" alt="浪漫富春意" width="412" height="260">
+          <!--<img src="../assets/images/promotion/starbucks-tmall-0312-cn.jpg" alt="浪漫富春意" width="412" height="260">-->
         </div>
       </el-col>
       <el-col :span="8">
         <div class="grid-content bg-purple">
-          <img src="../assets/images/promotion/starbucks-design-studio-web-china.jpg" alt="实体店" width="412"
-               height="260">
+          <!--<img src="../assets/images/promotion/starbucks-design-studio-web-china.jpg" alt="实体店" width="412"-->
+               <!--height="260">-->
         </div>
       </el-col>
       <el-col :span="8">
         <div class="grid-content bg-purple">
-          <img src="../assets/images/promotion/homepage-career-cn.jpg" alt="星巴克招募" width="412" height="260">
+          <!--<img src="../assets/images/promotion/homepage-career-cn.jpg" alt="星巴克招募" width="412" height="260">-->
         </div>
       </el-col>
     </el-row>
@@ -96,34 +96,26 @@
 
   .el-row {
     margin-bottom: 20px;
-
-  &
-  :last-child {
-    margin-bottom: 0;
-  }
-
+  &:last-child {
+     margin-bottom: 0;
+   }
   }
   .el-col {
     border-radius: 4px;
   }
-
   .bg-purple-dark {
     background: #99a9bf;
   }
-
   .bg-purple {
     background: #d3dce6;
   }
-
   .bg-purple-light {
     background: #e5e9f2;
   }
-
   .grid-content {
     border-radius: 4px;
     min-height: 36px;
   }
-
   .row-bg {
     padding: 10px 0;
     background-color: #f9fafc;
