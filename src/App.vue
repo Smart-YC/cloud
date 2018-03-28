@@ -4,7 +4,7 @@
     <el-header class="header-fixed">
       <div style="width: 1200px;margin: 0 auto;">
         <ol style="display: inline">
-          <img src="./assets/logo.png" alt="logo" width="45" height="45"><span>潮流前线</span></ol>
+          <img src="./assets/images/logo/logo.png" alt="logo" width="45" height="45"><span>潮流前线</span></ol>
         <el-menu default-active="/Index" class="el-menu-demo" mode="horizontal" :router="true">
           <el-menu-item index="/Index">首页</el-menu-item>
           <el-menu-item index="/Compose">创作</el-menu-item>
@@ -14,7 +14,7 @@
         </el-menu>
       </div>
     </el-header>
-    <main v-loading="loading">
+    <main>
       <router-view class="view"></router-view>
     </main>
 
@@ -33,18 +33,17 @@
       }
     },
     computed: {
-      onRoutes() {
+      onRoutes: function () {
         return this.$route.path.replace('/', '');
       }
+    },
+    methods: {
+
     }
   }
 </script>
 
 <style>
-  body {
-    min-width: 1200px;
-    margin: 0 auto;
-  }
 
   #app {
     min-width: 1200px;
