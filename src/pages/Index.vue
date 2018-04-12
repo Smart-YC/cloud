@@ -73,12 +73,11 @@
             <el-col :span="3">
               <div class="grid-content">
                 <el-card :body-style="{ padding: '0px' }">
-                  <div style="padding: 14px;">
-                    <span>好吃的汉堡</span>
-                    <div class="bottom clearfix">
-                      <time class="time">{{ currentDate }}</time>
-                      <el-button type="text" class="button">操作按钮</el-button>
-                    </div>
+                  <img src="../assets/images/choiceness/tmall-card-01.png" class="image">
+                  <div style="padding: 14px;text-align: center">
+                    <h3>星享卡</h3>
+                    <p>开始您的<br>星巴克专属之旅</p>
+                    <a href="#">了解更多</a>
                   </div>
                 </el-card>
               </div>
@@ -86,12 +85,11 @@
             <el-col :span="3">
               <div class="grid-content">
                 <el-card :body-style="{ padding: '0px' }">
-                  <div style="padding: 14px;">
-                    <span>好吃的汉堡</span>
-                    <div class="bottom clearfix">
-                      <time class="time">{{ currentDate }}</time>
-                      <el-button type="text" class="button">操作按钮</el-button>
-                    </div>
+                  <img src="../assets/images/choiceness/tmall-card-02.png" class="image">
+                  <div style="padding: 14px;text-align: center">
+                    <h3>星享卡</h3>
+                    <p>开始您的<br>星巴克专属之旅</p>
+                    <a href="#">了解更多</a>
                   </div>
                 </el-card>
               </div>
@@ -99,12 +97,11 @@
             <el-col :span="3">
               <div class="grid-content">
                 <el-card :body-style="{ padding: '0px' }">
-                  <div style="padding: 14px;">
-                    <span>好吃的汉堡</span>
-                    <div class="bottom clearfix">
-                      <time class="time">{{ currentDate }}</time>
-                      <el-button type="text" class="button">操作按钮</el-button>
-                    </div>
+                  <img src="../assets/images/choiceness/tmall-eticket.png" class="image" height="92">
+                  <div style="padding: 14px;text-align: center">
+                    <h3>星享卡</h3>
+                    <p>开始您的<br>星巴克专属之旅</p>
+                    <a href="#">了解更多</a>
                   </div>
                 </el-card>
               </div>
@@ -112,12 +109,11 @@
             <el-col :span="3">
               <div class="grid-content">
                 <el-card :body-style="{ padding: '0px' }">
-                  <div style="padding: 14px;">
-                    <span>好吃的汉堡</span>
-                    <div class="bottom clearfix">
-                      <time class="time">{{ currentDate }}</time>
-                      <el-button type="text" class="button">操作按钮</el-button>
-                    </div>
+                  <img src="../assets/images/choiceness/tmall-reserve.png" class="image" height="92">
+                  <div style="padding: 14px;text-align: center">
+                    <h3>星享卡</h3>
+                    <p>开始您的<br>星巴克专属之旅</p>
+                    <a href="#">了解更多</a>
                   </div>
                 </el-card>
               </div>
@@ -130,7 +126,13 @@
         </div>
       </div>
     </div>
-
+    <!--讲堂-->
+    <div class="advertise-container">
+      <div style="text-align: center">
+        <h1>1912 派克街 | 咖啡星讲堂</h1>
+        <h5>了解更多星巴克咖啡文化</h5>
+      </div>
+    </div>
     <ul class="list">
       <li v-for="item in list" v-text="item.unitname"></li>
     </ul>
