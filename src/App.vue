@@ -79,11 +79,7 @@
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    min-height: 800px;
-    width: 1200px;
-    margin: 0 auto;
-    margin-top: 75px;
-    /*border: solid 40px #E9ECF1;*/
+    min-height: 960px;
     background-color: #FCFCFC;
   }
 
