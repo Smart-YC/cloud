@@ -6,11 +6,11 @@
         <ol style="display: inline">
           <img src="./assets/images/logo/logo.png" alt="logo" width="45" height="45"><span>潮流前线</span></ol>
         <el-menu default-active="/Index" class="el-menu-demo" mode="horizontal" :router="true">
-          <el-menu-item index="/Index">首页</el-menu-item>
-          <el-menu-item index="/Compose">创作</el-menu-item>
-          <el-menu-item index="/Life">生活圈</el-menu-item>
-          <el-menu-item index="/Stylist">设计师</el-menu-item>
-          <el-menu-item index="/Activity">活动发布</el-menu-item>
+          <el-menu-item index="/Index"><i class="icon iconfont icon-icon"></i>首页</el-menu-item>
+          <el-menu-item index="/Compose"><i class="icon iconfont icon-huihuaban"></i>创作</el-menu-item>
+          <el-menu-item index="/Life"><i class="icon iconfont icon-zhifubaoshenghuoquan"></i>生活圈</el-menu-item>
+          <el-menu-item index="/Stylist"><i class="icon iconfont icon-caozuo"></i>设计师</el-menu-item>
+          <el-menu-item index="/Activity"><i class="icon iconfont icon-huodong"></i>活动发布</el-menu-item>
         </el-menu>
       </div>
     </el-header>
@@ -37,9 +37,7 @@
         return this.$route.path.replace('/', '');
       }
     },
-    methods: {
-
-    }
+    methods: {}
   }
 </script>
 
