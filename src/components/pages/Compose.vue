@@ -1,5 +1,5 @@
 <template>
-
+<div class="compose">创作</div>
 </template>
 
 <script>
@@ -9,5 +9,7 @@
 </script>
 
 <style scoped>
-
+  .compose{
+    margin-top: 60px;
+  }
 </style>

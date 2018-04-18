@@ -1,5 +1,7 @@
 <template>
-
+<div class="life">
+  生活圈
+</div>
 </template>
 
 <script>
@@ -9,5 +11,7 @@
 </script>
 
 <style scoped>
-
+.life{
+  margin-top: 60px;
+}
 </style>

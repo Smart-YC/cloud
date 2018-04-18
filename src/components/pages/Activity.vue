@@ -1,5 +1,5 @@
 <template>
-
+<div class="activity">活动发布</div>
 </template>
 
 <script>
@@ -9,5 +9,7 @@
 </script>
 
 <style scoped>
-
+.activity{
+  margin-top: 60px;
+}
 </style>

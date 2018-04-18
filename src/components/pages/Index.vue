@@ -73,7 +73,7 @@
             <el-col :span="3">
               <div class="grid-content">
                 <el-card :body-style="{ padding: '0px' }">
-                  <img src="../assets/images/choiceness/tmall-card-01.png" class="image">
+                  <img src="../../assets/images/choiceness/tmall-card-01.png" class="image">
                   <div style="padding: 14px;text-align: center">
                     <h3>星享卡</h3>
                     <p>开始您的<br>星巴克专属之旅</p>
@@ -85,7 +85,7 @@
             <el-col :span="3">
               <div class="grid-content">
                 <el-card :body-style="{ padding: '0px' }">
-                  <img src="../assets/images/choiceness/tmall-card-02.png" class="image">
+                  <img src="../../assets/images/choiceness/tmall-card-02.png" class="image">
                   <div style="padding: 14px;text-align: center">
                     <h3>星享卡</h3>
                     <p>开始您的<br>星巴克专属之旅</p>
@@ -97,7 +97,7 @@
             <el-col :span="3">
               <div class="grid-content">
                 <el-card :body-style="{ padding: '0px' }">
-                  <img src="../assets/images/choiceness/tmall-eticket.png" class="image" height="92">
+                  <img src="../../assets/images/choiceness/tmall-eticket.png" class="image" height="92">
                   <div style="padding: 14px;text-align: center">
                     <h3>星享卡</h3>
                     <p>开始您的<br>星巴克专属之旅</p>
@@ -109,7 +109,7 @@
             <el-col :span="3">
               <div class="grid-content">
                 <el-card :body-style="{ padding: '0px' }">
-                  <img src="../assets/images/choiceness/tmall-reserve.png" class="image" height="92">
+                  <img src="../../assets/images/choiceness/tmall-reserve.png" class="image" height="92">
                   <div style="padding: 14px;text-align: center">
                     <h3>星享卡</h3>
                     <p>开始您的<br>星巴克专属之旅</p>
@@ -175,6 +175,7 @@
 <style scoped>
   .home {
     width: 100%;
+    margin-top: 60px;
   }
 
   .el-carousel__item {
@@ -187,13 +188,13 @@
   }
 
   .el-carousel__item:nth-child(2n) {
-    background-image: url("../assets/images/banner/cold-brew-desktop.jpg");
+    background-image: url("../../assets/images/banner/cold-brew-desktop.jpg");
     background-repeat: no-repeat;
     background-size: cover;
   }
 
   .el-carousel__item:nth-child(2n+1) {
-    background-image: url("../assets/images/banner/kv.jpg");
+    background-image: url("../../assets/images/banner/kv.jpg");
     background-repeat: no-repeat;
     background-size: cover;
   }
@@ -216,19 +217,19 @@
   }
 
   .bg-one {
-    background-image: url("../assets/images/promotion/starbucks-tmall-0312-cn.jpg");
+    background-image: url("../../assets/images/promotion/starbucks-tmall-0312-cn.jpg");
     background-repeat: no-repeat;
     background-size: cover;
   }
 
   .bg-two {
-    background-image: url("../assets/images/promotion/starbucks-design-studio-web-china.jpg");
+    background-image: url("../../assets/images/promotion/starbucks-design-studio-web-china.jpg");
     background-repeat: no-repeat;
     background-size: cover;
   }
 
   .bg-three {
-    background-image: url("../assets/images/promotion/homepage-career-cn.jpg");
+    background-image: url("../../assets/images/promotion/homepage-career-cn.jpg");
     background-repeat: no-repeat;
     background-size: cover;
   }
