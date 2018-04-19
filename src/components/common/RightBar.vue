@@ -2,13 +2,17 @@
   <div class="right-bar">
     <div class="sidebar-tabs">
       <div class="toolbar-tabs-middle">
-        <a class="toolbar-btn icon-order toolbar-close" href="/profile/order" hardjump=""
-           tooltip="我的订单" tooltip-placement="left" ubt-click="toolbar_order"><i class="iconfont icon-dingdan"></i>
-          <!-- ngIf: sidebarCount.uncompletedOrder > 0 --></a>
+        <el-tooltip class="item" effect="dark" content="我的订单" placement="left">
+          <a class="toolbar-btn icon-order toolbar-close" href="/profile/order" hardjump=""
+             tooltip="我的订单" tooltip-placement="left" ubt-click="toolbar_order"><i class="iconfont icon-dingdan"></i>
+            <!-- ngIf: sidebarCount.uncompletedOrder > 0 --></a>
+        </el-tooltip>
         <div class="toolbar-separator"></div>
-        <a class="toolbar-cartbtn icon-cart toolbar-open" href="JavaScript:" template="cart"
-           ng-class="{'focus': (activeTemplate === 'cart' &amp;&amp; isSidebarOpen), 'toolbar-cartbtn-shownum': foodCount.count}"
-           ubt-click="390">购物车<!-- ngIf: foodCount.count --></a>
+        <el-tooltip class="item" effect="dark" content="购物车" placement="left">
+          <a class="toolbar-cartbtn icon-cart toolbar-open" href="JavaScript:" template="cart"
+             ng-class="{'focus': (activeTemplate === 'cart' &amp;&amp; isSidebarOpen), 'toolbar-cartbtn-shownum': foodCount.count}"
+             ubt-click="390">购物车<!-- ngIf: foodCount.count --></a>
+        </el-tooltip>
         <div class="toolbar-separator"></div>
         <a class="toolbar-btn icon-notice toolbar-open modal-hide" href="JavaScript:" template="message"
            ng-class="{'focus': (activeTemplate === 'message' &amp;&amp; isSidebarOpen), 'toolbar-open': user, 'modal-hide': user}"
