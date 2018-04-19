@@ -1,135 +1,86 @@
 <template>
   <div id="app">
-    <!-- 头部导航 -->
-    <el-header class="header-fixed">
-      <div style="width: 1200px;margin: 0 auto;">
-        <ol style="display: inline">
-          <img src="./assets/images/logo/logo.png" alt="logo" width="45" height="45"><span>潮流前线</span></ol>
-        <el-menu default-active="/Index"  class="el-menu-demo" mode="horizontal" :router="true">
-          <el-menu-item index="/Index">首页</el-menu-item>
-          <el-menu-item index="/Compose">创作</el-menu-item>
-          <el-menu-item index="/Life">生活圈</el-menu-item>
-          <el-menu-item index="/Stylist">设计师</el-menu-item>
-          <el-menu-item index="/Activity">活动发布</el-menu-item>
-        </el-menu>
+    <!--顶部导航-->
+    <div class="app-wrap">
+      <div class="app-container">
+        <Nav></Nav>
       </div>
-    </el-header>
-    <!--<main>-->
+    </div>
+    <!--右侧工具栏-->
+    <RightBar></RightBar>
+    <main class="content">
+      <Location></Location>
       <router-view class="view"></router-view>
-    <!--</main>-->
-
-
+    </main>
   </div>
 </template>
 
 <script>
+  import Nav from '@/components/common/Nav'
+  import Location from '@/components/common/Location'
+  import RightBar from '@/components/common/RightBar'
+
   export default {
     name: 'App',
     data: function () {
       return {
-        active: true,
-        currentDate: new Date(),
-        loading: true,
-        data:[{
-          name:11,
-          age:18
-        }]
+        menuData: []
       }
+    },
+    components: {
+      Nav, Location, RightBar
     },
     computed: {
       onRoutes: function () {
         return this.$route.path.replace('/', '');
       }
     },
-    methods: {}
+    mounted: function () {
+      // this.get_data();
+      // console.log(this.menuData)
+    },
+    methods: {
+      get_data: function () {
+        let v = this;
+        this.$http.get("static/resource/data.json").then(
+          function (res) {
+            // 处理成功的结果
+            console.group(res);
+            v.menuData = res.bodyText;
+          }, function (res) {
+            // 处理失败的结果
+            console.log(res);
+          }
+        );
+      },
+    }
   }
 </script>
 
 <style>
-
-  #app {
-    min-width: 1200px;
-    margin: 0 auto;
-    font-family: "Helvetica Neue", "PingFang SC", Arial, sans-serif;
-  }
-
-  /* 头部导航 */
-  header {
-    z-index: 1000;
-    min-width: 1200px;
-    transition: all 0.5s ease;
-    /*border-top: solid 4px #3091F2;*/
-    background-color: #fff;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .12), 0 0 6px 0 rgba(0, 0, 0, .04);
-
-  }
-
-  header.header-fixed {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-  }
-
-  header .el-menu-demo {
-    float: right;
-    display: inline;
-  }
-
-  /* 主内容区 */
-  main {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    min-height: 960px;
-    background-color: #FCFCFC;
-  }
-
-  main .main-left {
-    text-align: center;
-    width: 200px;
-    float: left;
-  }
-
-  main .main-right {
-    -webkit-box-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
-    background-color: #fff;
-    padding: 50px 70px;
-  }
-
-  main .el-menu {
-    background-color: transparent !important;
-  }
-
-  .time {
-    font-size: 13px;
-    color: #999;
-  }
-
-  .bottom {
-    margin-top: 13px;
-    line-height: 12px;
-  }
-
-  .button {
+  body {
+    margin: 0;
     padding: 0;
-    float: right;
+    background-color: #f7f7f7;
   }
 
-  .image {
-    width: 100%;
+  .app-wrap {
     display: block;
+    height: 60px;
+    background-color: #1e89e0;
   }
 
-  .clearfix:before,
-  .clearfix:after {
-    display: table;
-    content: "";
+  .app-container {
+    width: 1200px;
+    height: 60px;
+    margin: 0 auto;
   }
 
-  .clearfix:after {
-    clear: both
+  .content {
+    width: 1200px;
+    margin: 0 auto;
+    height: 100%;
   }
+
+
 </style>
