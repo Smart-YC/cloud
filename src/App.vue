@@ -8,10 +8,15 @@
     </div>
     <!--右侧工具栏-->
     <RightBar></RightBar>
+    <!--内容区域-->
     <main class="content">
       <Location></Location>
       <router-view class="view"></router-view>
     </main>
+    <!--底部版本信息-->
+    <div class="footer">
+      <Foot></Foot>
+    </div>
   </div>
 </template>
 
@@ -19,6 +24,7 @@
   import Nav from '@/components/common/Nav'
   import Location from '@/components/common/Location'
   import RightBar from '@/components/common/RightBar'
+  import Foot from '@/components/common/Foot'
 
   export default {
     name: 'App',
@@ -28,7 +34,7 @@
       }
     },
     components: {
-      Nav, Location, RightBar
+      Nav, Location, RightBar, Foot
     },
     computed: {
       onRoutes: function () {
@@ -79,8 +85,10 @@
   .content {
     width: 1200px;
     margin: 0 auto;
-    height: 100%;
+    height: 800px;
   }
 
-
+  .footer {
+  border-top: 1px solid #e6e6e6;
+  }
 </style>
