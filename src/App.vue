@@ -10,7 +10,6 @@
     <RightBar></RightBar>
     <!--内容区域-->
     <main class="content">
-      <Location></Location>
       <router-view class="view"></router-view>
     </main>
     <!--底部版本信息-->
@@ -22,7 +21,6 @@
 
 <script>
   import Nav from '@/components/common/Nav'
-  import Location from '@/components/common/Location'
   import RightBar from '@/components/common/RightBar'
   import Foot from '@/components/common/Foot'
 
@@ -34,7 +32,7 @@
       }
     },
     components: {
-      Nav, Location, RightBar, Foot
+      Nav, RightBar, Foot
     },
     computed: {
       onRoutes: function () {

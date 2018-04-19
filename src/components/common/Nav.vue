@@ -1,5 +1,5 @@
 <template>
-  <div class="nav">
+  <div>
     <h3 class="topbar-logo">饿了吗</h3>
     <el-menu
       :default-active="activeIndex"
@@ -8,11 +8,13 @@
       @select="handleSelect"
       background-color="#1e89e0"
       text-color="#fff"
-      active-text-color="#1e89e0">
-      <el-menu-item index="1">首页</el-menu-item>
-      <el-menu-item index="2">我的订单</el-menu-item>
-      <el-menu-item index="3">加盟合作</el-menu-item>
-      <el-menu-item index="4">我的客服</el-menu-item>
+      active-text-color="#1e89e0"
+      :router="true"
+      default-active="/Index">
+      <el-menu-item index="/Index">首页</el-menu-item>
+      <el-menu-item index="/Order">我的订单</el-menu-item>
+      <el-menu-item index="/Join">加盟合作</el-menu-item>
+      <el-menu-item index="/Service">我的客服</el-menu-item>
     </el-menu>
     <ul class="topbar-nav">
       <li><a href="">规则中心</a></li>
@@ -33,6 +35,11 @@
     methods: {
       handleSelect(key, keyPath) {
         console.log(key, keyPath);
+      }
+    },
+    computed: {
+      onRoutes() {
+        return this.$route.path.replace('/', '');
       }
     }
   }
