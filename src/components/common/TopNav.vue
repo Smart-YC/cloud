@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h3 class="topbar-logo">饿了吗</h3>
+    <h1 class="topbar-logo">饿了吗</h1>
     <el-menu
       :default-active="activeIndex"
       class="el-menu-demo"
@@ -32,7 +32,8 @@
       <li class="phone-use">
         <el-button type="text" v-popover:popover><i class="iconfont  icon-shouji"></i> 手机应用</el-button>
       </li>
-      <li><a href=""><i class="iconfont  icon-gerenzhongxin"></i><span class="user-bold"> 登录/注册</span></a></li>
+      <li><a href=""><i class="iconfont  icon-gerenzhongxin"></i><span class="user-bold"> 登录/注册</span></a>
+      </li>
     </ul>
   </div>
 </template>
@@ -60,6 +61,10 @@
 
 <style scoped>
 
+  h1, ul {
+    padding: 0;
+    margin: 0;
+  }
 
   .el-menu-demo {
     float: left;
@@ -70,12 +75,15 @@
     color: #fff;
     height: 60px;
     margin-right: 10px;
+    padding-top: 7px;
   }
 
   .topbar-nav {
     list-style: none;
     float: right;
     height: 60px;
+    padding-top: 10px;
+    font-size: 14px;
   }
 
   .topbar-nav li {
@@ -102,6 +110,7 @@
 
   .user-bold {
     font-weight: bold;
+    color: #fff;
   }
 
   .is-active {
@@ -135,4 +144,5 @@
     font-weight: 700;
 
   }
+
 </style>
