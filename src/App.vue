@@ -3,7 +3,7 @@
     <!--顶部导航-->
     <div class="app-wrap">
       <div class="app-container">
-        <Nav></Nav>
+        <TopNav></TopNav>
       </div>
     </div>
     <!--右侧工具栏-->
@@ -20,7 +20,7 @@
 </template>
 
 <script>
-  import Nav from '@/components/common/Nav'
+  import TopNav from '@/components/common/TopNav'
   import RightBar from '@/components/common/RightBar'
   import Foot from '@/components/common/Foot'
 
@@ -32,7 +32,7 @@
       }
     },
     components: {
-      Nav, RightBar, Foot
+      TopNav, RightBar, Foot
     },
     computed: {
       onRoutes: function () {
@@ -40,23 +40,9 @@
       }
     },
     mounted: function () {
-      // this.get_data();
-      // console.log(this.menuData)
     },
     methods: {
-      get_data: function () {
-        let v = this;
-        this.$http.get("static/resource/data.json").then(
-          function (res) {
-            // 处理成功的结果
-            console.group(res);
-            v.menuData = res.bodyText;
-          }, function (res) {
-            // 处理失败的结果
-            console.log(res);
-          }
-        );
-      },
+
     }
   }
 </script>

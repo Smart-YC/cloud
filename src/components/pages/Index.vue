@@ -1,7 +1,12 @@
 <template>
   <div class="home">
-    <Location></Location>
-    首页
+    <ul v-for="item in list">
+      <li style="list-style: none;float: left">
+        <img
+          :src="['//fuss10.elemecdn.com/c/14/48d5806f132eee1c634547e637a90jpeg.jpeg?imageMogr2/thumbnail/70x70/format/webp/quality/85']"
+          width="70" height="70" :alt=item.name class="rstblock-logo-icon">
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -15,7 +20,7 @@
         list: [],
       }
     },
-    created: function () {
+    mounted: function () {
       this.get_data();
     },
     components: {
@@ -24,15 +29,14 @@
     methods: {
       get_data: function () {
         let v = this;
-        console.group('created 调用方法===============》');
-        this.$http.post("https://localhost:8443/wmms/wmms/api/organizationStructure/getUnit", {
-          // page: 0,
-          // size: 10
-        }, {emulateJSON: false}).then(
+        this.$http.get("static/resource/data.json").then(
           function (res) {
             // 处理成功的结果
-            console.group(res);
-            v.list = res.body.body.rows;
+            console.log(res);
+            let data = JSON.parse(res.bodyText);
+            for (let i in data) {
+              v.list.push(data[i]);
+            }
           }, function (res) {
             // 处理失败的结果
             console.group(res);
