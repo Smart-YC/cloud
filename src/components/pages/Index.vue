@@ -4,7 +4,7 @@
     <Classify></Classify>
     <div class="content-menu">
       <el-row>
-        <el-col :span="6" v-for="item in list" class="menu-item">
+        <el-col :span="6" v-for="(index,item) in list" :key="index" class="menu-item">
           <div class="rstblock-logo"><img
             :src=[item.image_path]
             width="70" height="70" :alt=item.name
