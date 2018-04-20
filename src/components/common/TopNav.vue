@@ -18,14 +18,14 @@
     </el-menu>
     <el-popover
       ref="popover"
-      placement="top-start"
+      placement="bottom-start"
       title="标题"
       width="200"
       trigger="hover"
       content="这是一段内容,这是一段内容,这是一段内容,这是一段内容。">
     </el-popover>
     <ul class="topbar-nav">
-      <li><a href="" slot="reference">规则中心</a></li>
+      <li><a href="">规则中心</a></li>
       <li><a href=""><i class="iconfont  icon-shouji"></i> 手机应用</a></li>
       <li><a href=""><i class="iconfont  icon-gerenzhongxin"></i><span class="user-bold"> 登录/注册</span></a></li>
     </ul>

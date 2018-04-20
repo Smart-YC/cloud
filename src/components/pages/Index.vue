@@ -1,12 +1,25 @@
 <template>
   <div class="home">
-    <ul v-for="item in list">
-      <li style="list-style: none;float: left">
-        <img
-          :src="['//fuss10.elemecdn.com/c/14/48d5806f132eee1c634547e637a90jpeg.jpeg?imageMogr2/thumbnail/70x70/format/webp/quality/85']"
-          width="70" height="70" :alt=item.name class="rstblock-logo-icon">
-      </li>
-    </ul>
+    <div class="content-menu">
+      <el-row>
+        <el-col :span="6" v-for="item in list" class="menu-item">
+          <a href="/shop/155120940" data-rst-id="155120940" data-bidding="" target="_blank" class="rstblock">
+            <div class="rstblock-logo"><img
+              src="//fuss10.elemecdn.com/7/09/eb7f81645e8aec03c833cab028627png.png?imageMogr2/thumbnail/70x70/format/webp/quality/85"
+              width="70" height="70" alt="峨嵋酒家（牡丹园店）" class="rstblock-logo-icon"><span>33 分钟</span>
+              <div class="elemeicon elemeicon-premiumsign rstblock-logo-premiumsign"></div>
+            </div>
+            <div class="rstblock-content">
+              <div class="rstblock-title">峨嵋酒家（牡丹园店）</div>
+              <div class="starrating icon-star"><span class="icon-star" style="width:100%;"></span></div>
+              <div class="rstblock-cost">配送费¥3</div>
+              <div class="rstblock-activity"><i style="background:#fff;color:#999999;border:1px solid;padding:0;">票</i>
+              </div>
+            </div>
+          </a>
+        </el-col>
+      </el-row>
+    </div>
   </div>
 </template>
 
@@ -18,6 +31,7 @@
     data() {
       return {
         list: [],
+        value: 5
       }
     },
     mounted: function () {
@@ -50,92 +64,26 @@
 <style scoped>
   .home {
     width: 100%;
-    margin-top: 60px;
+    clear: both;
   }
 
-  .el-carousel__item {
-    color: #475669;
-    font-size: 18px;
-    opacity: 0.75;
-    line-height: 960px;
-    margin: 0;
-    height: 960px;
+  .content-menu {
+    border: 1px solid #e6e6e6;
+    background-color: #fff;
+  }
+  a {
+    text-decoration: none;
   }
 
-  .el-carousel__item:nth-child(2n) {
-    background-image: url("../../assets/images/banner/cold-brew-desktop.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
+  .menu-item {
+    border-bottom: 1px #f5f5f5 solid;
+    padding: 20px;
   }
 
-  .el-carousel__item:nth-child(2n+1) {
-    background-image: url("../../assets/images/banner/kv.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-
-  .el-row {
-    margin-bottom: 20px;
-
-  &
-  :last-child {
-    margin-bottom: 0;
-  }
-
-  }
-  .el-col {
-    border-radius: 4px;
-  }
-
-  .bg-purple-dark {
-    background: #99a9bf;
-  }
-
-  .bg-one {
-    background-image: url("../../assets/images/promotion/starbucks-tmall-0312-cn.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-
-  .bg-two {
-    background-image: url("../../assets/images/promotion/starbucks-design-studio-web-china.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-
-  .bg-three {
-    background-image: url("../../assets/images/promotion/homepage-career-cn.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-
-  .bg-purple-light {
-    background: #e5e9f2;
-  }
-
-  .grid-content {
-    border-radius: 4px;
-    min-height: 250px;
-  }
-
-  .row-bg {
-    padding: 10px 0;
-    background-color: #f9fafc;
-  }
-
-  .advertise-wrap {
-    padding: 30px 0;
-    background: #f7f7f7;
-  }
-
-  .advertise-container {
-    width: 1200px;
-    margin: 0 auto;
-  }
-
-  .introduce-container {
-    width: 1200px;
-    margin: 0 auto;
+  .rstblock {
+    background-color: #fff;
+    border-bottom: 1px #f5f5f5 solid;
+    width: 33.33333%;
   }
 
 </style>

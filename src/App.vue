@@ -41,9 +41,7 @@
     },
     mounted: function () {
     },
-    methods: {
-
-    }
+    methods: {}
   }
 </script>
 
@@ -69,10 +67,10 @@
   .content {
     width: 1200px;
     margin: 0 auto;
-    height: 800px;
+    min-height: 300px;
   }
 
   .footer {
-  border-top: 1px solid #e6e6e6;
+    border-top: 1px solid #e6e6e6;
   }
 </style>
