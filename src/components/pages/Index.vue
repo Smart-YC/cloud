@@ -1,29 +1,31 @@
 <template>
   <div class="home">
+    <Location></Location>
+    <Classify></Classify>
     <div class="content-menu">
       <el-row>
-          <el-col :span="6" v-for="item in list" class="menu-item">
-            <div class="rstblock-logo"><img
-              :src=[item.image_path]
-              width="70" height="70" :alt=item.name
-              class="rstblock-logo-icon"><br><span>{{item.order_lead_time}}分钟</span>
-              <div class="elemeicon elemeicon-premiumsign rstblock-logo-premiumsign"></div>
+        <el-col :span="6" v-for="item in list" class="menu-item">
+          <div class="rstblock-logo"><img
+            :src=[item.image_path]
+            width="70" height="70" :alt=item.name
+            class="rstblock-logo-icon"><br><span>{{item.order_lead_time}}分钟</span>
+            <div class="elemeicon elemeicon-premiumsign rstblock-logo-premiumsign"></div>
+          </div>
+          <div class="rstblock-content">
+            <div class="rstblock-title">{{item.name}}</div>
+            <el-rate
+              v-model="value"
+              disabled
+              show-score
+              text-color="#ff9900"
+              score-template="{value}">
+            </el-rate>
+            <div class="rstblock-cost">{{item.piecewise_agent_fee.description}}</div>
+            <div class="rstblock-activity"><i
+              style="background:#fff;color:#999999;border:1px solid;padding-right:2px;font-size: 12px">{{item.activities[1].icon_name}}</i>
             </div>
-            <div class="rstblock-content">
-              <div class="rstblock-title">{{item.name}}</div>
-              <el-rate
-                v-model="value"
-                disabled
-                show-score
-                text-color="#ff9900"
-                score-template="{value}">
-              </el-rate>
-              <div class="rstblock-cost">{{item.piecewise_agent_fee.description}}</div>
-              <div class="rstblock-activity"><i
-                style="background:#fff;color:#999999;border:1px solid;padding:0;font-size: 12px">票</i>
-              </div>
-            </div>
-          </el-col>
+          </div>
+        </el-col>
       </el-row>
     </div>
   </div>
@@ -31,6 +33,7 @@
 
 <script>
   import Location from '@/components/common/Location'
+  import Classify from '@/components/common/Classify'
 
   export default {
     name: "home",
@@ -44,7 +47,7 @@
       this.get_data();
     },
     components: {
-      Location
+      Location, Classify
     },
     methods: {
       get_data: function () {
@@ -125,4 +128,5 @@
     margin-top: 3px;
     font-size: 12px;
   }
+
 </style>

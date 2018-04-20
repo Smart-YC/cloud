@@ -7,13 +7,13 @@
       class="location-change"
       ng-class="{ 'location-hashistory': user.username &amp;&amp; userPlaces &amp;&amp; userPlaces.length > 0 }"><a
       ng-href="/home" ubt-click="400" hardjump="" href="/home">[切换地址]</a></span></div>
-    <div class="place-search">
-      <el-input
-        placeholder="请输入内容"
-        v-model="input23">
-        <i slot="prefix" class="el-input__icon el-icon-search"></i>
-      </el-input>
-    </div>
+    <!--<div class="place-search">-->
+      <!--<el-input-->
+        <!--placeholder="请输入内容"-->
+        <!--v-model="input23">-->
+        <!--<i slot="prefix" class="el-input__icon el-icon-search"></i>-->
+      <!--</el-input>-->
+    <!--</div>-->
   </div>
 </template>
 
@@ -29,14 +29,13 @@
   }
 
   .location-container {
-    width: 1200px;
-    margin: 0 auto;
     clear: both;
   }
 
   .location {
     float: left;
     vertical-align: middle;
+    margin-bottom: 20px;
   }
 
   .place-search {
