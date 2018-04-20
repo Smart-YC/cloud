@@ -50,6 +50,11 @@
     margin: 0;
     padding: 0;
     background-color: #f7f7f7;
+
+  }
+
+  body, button, input, select, textarea {
+    font: 400 1em/1.5 PingFang SC, Lantinghei SC, Helvetica Neue, Microsoft Yahei, Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans;
   }
 
   .app-wrap {
@@ -71,6 +76,7 @@
   }
 
   .footer {
+    margin-top: 20px;
     border-top: 1px solid #e6e6e6;
   }
 </style>

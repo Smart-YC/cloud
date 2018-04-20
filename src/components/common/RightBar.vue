@@ -3,20 +3,16 @@
     <div class="sidebar-tabs">
       <div class="toolbar-tabs-middle">
         <el-tooltip class="item" effect="dark" content="我的订单" placement="left">
-          <a class="toolbar-btn icon-order toolbar-close" href="/profile/order" hardjump=""
-             tooltip="我的订单" tooltip-placement="left" ubt-click="toolbar_order"><i class="iconfont icon-dingdan"></i>
-            <!-- ngIf: sidebarCount.uncompletedOrder > 0 --></a>
+          <a href="#" class="text-white"><i class="iconfont icon-dingdan"></i></a>
         </el-tooltip>
         <div class="toolbar-separator"></div>
         <el-tooltip class="item" effect="dark" content="购物车" placement="left">
-          <a class="toolbar-cartbtn icon-cart toolbar-open" href="JavaScript:" template="cart"
-             ng-class="{'focus': (activeTemplate === 'cart' &amp;&amp; isSidebarOpen), 'toolbar-cartbtn-shownum': foodCount.count}"
-             ubt-click="390">购物车<!-- ngIf: foodCount.count --></a>
+          <a href="#" class="text-white text-font">购物车</a>
         </el-tooltip>
         <div class="toolbar-separator"></div>
-        <a class="toolbar-btn icon-notice toolbar-open modal-hide" href="JavaScript:" template="message"
-           ng-class="{'focus': (activeTemplate === 'message' &amp;&amp; isSidebarOpen), 'toolbar-open': user, 'modal-hide': user}"
-           tooltip="我的信息" tooltip-placement="left" ubt-click="392"><!-- ngIf: messageCount.count --></a>
+        <el-tooltip class="item" effect="dark" content="我的信息" placement="left">
+          <a href="#" class="text-white"><i class="iconfont icon-dingdan"></i></a>
+        </el-tooltip>
       </div>
     </div>
   </div>
@@ -42,6 +38,14 @@
     text-decoration: none;
   }
 
+  .text-white {
+    color: #fff;
+  }
+
+  .text-font {
+    font-size: 24px;
+  }
+
   .iconfont {
     font-size: 24px;
   }
@@ -51,6 +55,7 @@
     border-top: 1px solid #737074;
     height: 0;
     margin: 0 8px;
+    padding-left: 5px;
   }
 
   .sidebar-tabs {

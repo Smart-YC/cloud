@@ -2,20 +2,28 @@
   <div class="home">
     <div class="content-menu">
       <el-row>
-        <el-col :span="6" v-for="item in list" class="menu-item">
+          <el-col :span="6" v-for="item in list" class="menu-item">
             <div class="rstblock-logo"><img
-              src="//fuss10.elemecdn.com/7/09/eb7f81645e8aec03c833cab028627png.png?imageMogr2/thumbnail/70x70/format/webp/quality/85"
-              width="70" height="70" alt="峨嵋酒家（牡丹园店）" class="rstblock-logo-icon"><span>{{item.order_lead_time}}分钟</span>
+              :src=[item.image_path]
+              width="70" height="70" :alt=item.name
+              class="rstblock-logo-icon"><br><span>{{item.order_lead_time}}分钟</span>
               <div class="elemeicon elemeicon-premiumsign rstblock-logo-premiumsign"></div>
             </div>
             <div class="rstblock-content">
               <div class="rstblock-title">{{item.name}}</div>
-              <div class="starrating icon-star"><span class="icon-star" style="width:100%;"></span></div>
+              <el-rate
+                v-model="value"
+                disabled
+                show-score
+                text-color="#ff9900"
+                score-template="{value}">
+              </el-rate>
               <div class="rstblock-cost">{{item.piecewise_agent_fee.description}}</div>
-              <div class="rstblock-activity"><i style="background:#fff;color:#999999;border:1px solid;padding:0;">票</i>
+              <div class="rstblock-activity"><i
+                style="background:#fff;color:#999999;border:1px solid;padding:0;font-size: 12px">票</i>
               </div>
             </div>
-        </el-col>
+          </el-col>
       </el-row>
     </div>
   </div>
@@ -29,7 +37,7 @@
     data() {
       return {
         list: [],
-        value: 5
+        value: 3.7
       }
     },
     mounted: function () {
@@ -85,8 +93,36 @@
     border-bottom: 1px #f5f5f5 solid;
     width: 33.33333%;
   }
-  .menu-item:hover{
+
+  .menu-item:hover {
     background-color: #f5f5f5;
   }
 
+  .rstblock-logo {
+    float: left;
+    margin-right: 10px;
+    text-align: center;
+    font-size: 12px;
+    color: #999;
+  }
+
+  .rstblock-content {
+    display: inline;
+  }
+
+  .rstblock-title {
+    font-size: 16px;
+    margin-bottom: 6px;
+    font-weight: 600;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #333;
+  }
+
+  .rstblock-cost {
+    color: #999;
+    margin-top: 3px;
+    font-size: 12px;
+  }
 </style>

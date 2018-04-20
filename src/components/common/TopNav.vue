@@ -19,14 +19,19 @@
     <el-popover
       ref="popover"
       placement="bottom-start"
-      title="标题"
       width="200"
-      trigger="hover"
-      content="这是一段内容,这是一段内容,这是一段内容,这是一段内容。">
+      trigger="hover">
+      <div class="qrcode-container">
+        <span>扫一扫，手机订餐更方便</span>
+        <img src="//shadow.elemecdn.com/faas/desktop/media/img/appqc.95e532.png" class="topbar-nav-qrcode"
+             alt="扫一扫下载饿了么手机 App" width="180" height="180">
+      </div>
     </el-popover>
     <ul class="topbar-nav">
       <li><a href="">规则中心</a></li>
-      <li><a href=""><i class="iconfont  icon-shouji"></i> 手机应用</a></li>
+      <li class="phone-use">
+        <el-button type="text" v-popover:popover><i class="iconfont  icon-shouji"></i> 手机应用</el-button>
+      </li>
       <li><a href=""><i class="iconfont  icon-gerenzhongxin"></i><span class="user-bold"> 登录/注册</span></a></li>
     </ul>
   </div>
@@ -78,6 +83,10 @@
     margin-left: 15px;
   }
 
+  .el-menu-item {
+    font-size: 16px;
+  }
+
   a {
     color: #d2e7f9;
     text-decoration: none;
@@ -98,5 +107,32 @@
   .is-active {
     color: #fff !important;
     background-color: rgb(24, 110, 179) !important;
+  }
+
+  .el-button--text {
+    color: #d2e7f9;
+    background: 0 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .el-button--text:hover {
+    color: #fff;
+  }
+
+  .el-button {
+    padding: 0px !important;
+  }
+
+  .phone-use {
+    margin-right: 70px;
+  }
+
+  .qrcode-container {
+    padding: 10px;
+    color: #333;
+    font-size: 16px;
+    font-weight: 700;
+
   }
 </style>
