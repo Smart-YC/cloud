@@ -14,7 +14,7 @@
           <div class="rstblock-content">
             <div class="rstblock-title">{{item.name}}</div>
             <el-rate
-              v-model="value"
+              v-model="item.rating"
               disabled
               text-color="#ff9900"
               score-template="{value}">
@@ -38,9 +38,7 @@
     name: "home",
     data() {
       return {
-        list: [],
-        value: 3.7,
-        popover: ""
+        list: []
       }
     },
     mounted: function () {
