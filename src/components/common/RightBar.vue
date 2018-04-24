@@ -3,15 +3,15 @@
     <div class="sidebar-tabs">
       <div class="toolbar-tabs-middle">
         <el-tooltip class="item" effect="dark" content="我的订单" placement="left">
-          <a href="#" class="text-white"><i class="iconfont icon-dingdan"></i></a>
+          <a href="#" class="text-white toolbar-cartbtn"><i class="iconfont icon-dingdan"></i></a>
         </el-tooltip>
         <div class="toolbar-separator"></div>
         <el-tooltip class="item" effect="dark" content="购物车" placement="left">
-          <a href="#" class="text-white text-font">购物车</a>
+          <a href="#" class="text-white toolbar-cartbtn"><i class="iconfont icon-gouwuche"></i>购物车</a>
         </el-tooltip>
         <div class="toolbar-separator"></div>
         <el-tooltip class="item" effect="dark" content="我的信息" placement="left">
-          <a href="#" class="text-white"><i class="iconfont icon-dingdan"></i></a>
+          <a href="#" class="text-white toolbar-cartbtn"><i class="iconfont icon-icon-p_xinfeng"></i></a>
         </el-tooltip>
       </div>
     </div>
@@ -32,22 +32,28 @@
     position: fixed;
     right: 0;
     top: 0;
+    z-index: 1000;
   }
 
   a {
     text-decoration: none;
   }
 
+  .item{
+    display:block;
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
+  .item:hover{
+    background-color: #1e89e0;
+  }
+
   .text-white {
     color: #fff;
   }
 
-  .text-font {
-    font-size: 24px;
-  }
-
   .iconfont {
-    font-size: 24px;
+    font-size: 14px;
   }
 
   .toolbar-separator {
@@ -81,17 +87,12 @@
   .toolbar-cartbtn {
     color: #ccc;
     line-height: 16px;
-    padding: 7px 8px 10px;
+    padding: 7px 10px 10px;
     margin-bottom: 8px;
     margin-top: 8px;
     font-size: 14px;
     font-weight: 700;
   }
 
-  .toolbar-cartbtn:before {
-    font-size: 20px;
-    margin-bottom: 5px;
-    display: block;
-    font-weight: 400;
-  }
+
 </style>

@@ -5,26 +5,26 @@
     <div class="content-menu">
       <el-row>
         <el-col :span="6" v-for="(item,index) in list" :key="index" class="menu-item">
-          <div class="rstblock-logo"><img
-            :src=[item.image_path]
-            width="70" height="70" :alt=item.name
-            class="rstblock-logo-icon"><br><span>{{item.order_lead_time}}分钟</span>
-            <div class="elemeicon elemeicon-premiumsign rstblock-logo-premiumsign"></div>
-          </div>
-          <div class="rstblock-content">
-            <div class="rstblock-title">{{item.name}}</div>
-            <el-rate
-              v-model="value"
-              disabled
-              show-score
-              text-color="#ff9900"
-              score-template="{value}">
-            </el-rate>
-            <div class="rstblock-cost">{{item.piecewise_agent_fee.description}}</div>
-            <div class="rstblock-activity"><i
-              style="background:#fff;color:#999999;border:1px solid;padding-right:2px;font-size: 12px">{{item.activities[1].icon_name}}</i>
+            <div class="rstblock-logo"><img
+              :src=[item.image_path]
+              width="70" height="70" :alt=item.name
+              class="rstblock-logo-icon"><br><span>{{item.order_lead_time}}分钟</span>
+              <div class="elemeicon elemeicon-premiumsign rstblock-logo-premiumsign"></div>
             </div>
-          </div>
+            <div class="rstblock-content">
+              <div class="rstblock-title">{{item.name}}</div>
+              <el-rate
+                v-model="value"
+                disabled
+                show-score
+                text-color="#ff9900"
+                score-template="{value}">
+              </el-rate>
+              <div class="rstblock-cost">{{item.piecewise_agent_fee.description}}</div>
+              <div class="rstblock-activity"><i
+                style="background:#fff;color:#999999;border:1px solid;padding-right:2px;font-size: 12px">{{item.activities[1].icon_name}}</i>
+              </div>
+            </div>
         </el-col>
       </el-row>
     </div>
@@ -40,7 +40,8 @@
     data() {
       return {
         list: [],
-        value: 3.7
+        value: 3.7,
+        popover: ""
       }
     },
     mounted: function () {
@@ -66,6 +67,9 @@
           }
         );
       },
+      showPopover: function (id) {
+        this.popover = id;
+      }
     }
   }
 </script>

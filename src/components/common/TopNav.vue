@@ -30,9 +30,9 @@
     <ul class="topbar-nav">
       <li><a href="">规则中心</a></li>
       <li class="phone-use">
-        <el-button type="text" v-popover:popover><i class="iconfont  icon-shouji"></i> 手机应用</el-button>
+        <el-button type="text" v-popover:popover><i class="iconfont  icon-shouji1"></i> 手机应用</el-button>
       </li>
-      <li><a href=""><i class="iconfont  icon-gerenzhongxin"></i><span class="user-bold"> 登录/注册</span></a>
+      <li><a href=""><i class="iconfont  icon-iconfontzhizuobiaozhun023104"></i><span class="user-bold"> 登录/注册</span></a>
       </li>
     </ul>
   </div>
@@ -74,15 +74,15 @@
     float: left;
     color: #fff;
     height: 60px;
+    line-height: 60px;
     margin-right: 10px;
-    padding-top: 7px;
   }
 
   .topbar-nav {
     list-style: none;
     float: right;
     height: 60px;
-    padding-top: 10px;
+    line-height: 60px;
     font-size: 14px;
   }
 

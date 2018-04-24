@@ -1,5 +1,8 @@
 <template>
   <div class="classify">
+    <div class="place-container">
+      <img src="../../assets/images/main/takeout.408a87.png" alt="谁来拿外卖" width="186" height="55">
+    </div>
     <div class="excavator-filter ng-scope" ng-if="rstCategories.length"><span class="excavator-filter-name">商家分类:</span>
       <!-- ngRepeat: category in rstCategories --><a class="excavator-filter-item ng-binding ng-scope active"
                                                      href="javascript:" ng-repeat="category in rstCategories"
@@ -95,14 +98,19 @@
 </script>
 
 <style scoped>
+  a {
+    text-decoration: none;
+  }
+
   .classify {
     clear: both;
-    border: 1px solid #e6e6e6;
     margin-bottom: 20px;
   }
 
-  a {
-    text-decoration: none;
+  .place-container {
+    text-align: right;
+    margin-bottom: -10px;
+    z-index: 1000;
   }
 
   .excavator-filter {
@@ -111,6 +119,7 @@
     background-color: #fff;
     position: relative;
     font-size: 14px;
+    border: 1px solid #e6e6e6;
   }
 
   .excavator-filter-name {
@@ -119,6 +128,7 @@
     top: 13px;
     color: #999;
   }
+
   .excavator-filter-item.active {
     line-height: 36px;
     background-color: #f6f6f6;
@@ -127,14 +137,17 @@
     padding: 0 16px;
     height: 38px;
   }
+
   .excavator-filter a {
     color: #666;
   }
+
   .excavator-filter-item {
     white-space: nowrap;
     display: inline-block;
     margin: 5px 6px;
   }
+
   .excavator-filter-item, .excavator-filter-name {
     padding: 0 10px;
     margin-right: 8px;

@@ -11,7 +11,7 @@ import Vuex from 'vuex'
 
 Vue.config.productionTip = false;
 
-Vue.use(Vuex)
+Vue.use(Vuex);
 Vue.use(VueResource);
 Vue.use(ElementUI);
 /* eslint-disable no-new */
