@@ -57,6 +57,10 @@
     font: 400 1em/1.5 PingFang SC, Lantinghei SC, Helvetica Neue, Microsoft Yahei, Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans;
   }
 
+  .el-rate__icon {
+    font-size: 14px !important;
+  }
+
   .app-wrap {
     display: block;
     height: 60px;
