@@ -61,6 +61,10 @@
     font-size: 14px !important;
   }
 
+  .el-popover {
+    border: 2px solid #e6e6e6 !important;
+  }
+
   .app-wrap {
     display: block;
     height: 60px;
