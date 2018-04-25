@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 class="topbar-logo">饿了吗</h1>
+    <h1><a href="/" hardjump="" class="topbar-logo icon-logo"><span>饿了么</span></a></h1>
     <el-menu
       :default-active="activeIndex"
       class="el-menu-demo"
@@ -69,13 +69,36 @@
   .el-menu-demo {
     float: left;
   }
+  [class*=" icon-"], [class^=icon-] {
+    font-family: eleme;
+    speak: none;
+    font-style: normal;
+    font-weight: 400;
+    -webkit-font-feature-settings: normal;
+    font-feature-settings: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 
   .topbar-logo {
     float: left;
     color: #fff;
     height: 60px;
+    width: 120px;
+    margin-right: 30px;
     line-height: 60px;
-    margin-right: 10px;
+  }
+  .topbar-logo:before {
+    color: #fff;
+    font-size: 32px;
+    vertical-align: top;
+  }
+
+  .icon-logo:before {
+    content: "\e92c";
   }
 
   .topbar-nav {

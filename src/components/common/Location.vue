@@ -17,7 +17,7 @@
     name: "location",
     data() {
       return {
-        locationMsg: "北土城民族园1号"
+        locationMsg: "正在定位中..."
       };
     },
     mounted: function () {
@@ -30,7 +30,7 @@
           navigator.geolocation.getCurrentPosition(this.showPosition, this.showError);
         }
         else {
-          v.locationMsg = "Geolocation is not supported by this browser.";
+          v.locationMsg = "地理定位不受这个浏览器的支持";
         }
       },
       showPosition(position) {
@@ -42,16 +42,16 @@
         let v = this;
         switch (error.code) {
           case error.PERMISSION_DENIED:
-            v.locationMsg = "User denied the request for Geolocation.";
+            v.locationMsg = "用户拒绝了地理定位的请求";
             break;
           case error.POSITION_UNAVAILABLE:
-            v.locationMsg = "Location information is unavailable.";
+            v.locationMsg = "位置信息不可用";
             break;
           case error.TIMEOUT:
-            v.locationMsg = "The request to get user location timed out.";
+            v.locationMsg = "用户位置请求超时";
             break;
           case error.UNKNOWN_ERROR:
-            v.locationMsg = "An unknown error occurred.";
+            v.locationMsg = "一个未知的错误发生";
             break;
         }
       }
