@@ -7,7 +7,7 @@
         <el-col :span="6" v-for="(item,index) in list" :key="index" class="menu-item">
           <el-popover
             placement="right-start"
-            width="200"
+            width="250"
             trigger="hover">
             <div>
               <h3>{{item.name}}</h3>
@@ -16,6 +16,12 @@
               <hr>
               <p v-for="(value,n) in item.supports" :key="n"><i class="flavors-label">{{value.icon_name}}</i>{{value.description}}
               </p>
+              <div class="fee-wrap">
+                <el-breadcrumb separator="|">
+                  <el-breadcrumb-item>{{item.piecewise_agent_fee.description}}</el-breadcrumb-item>
+                  <el-breadcrumb-item>平均 <span class="text-red">{{item.order_lead_time}}</span>分钟到达</el-breadcrumb-item>
+                </el-breadcrumb>
+              </div>
               <p>{{item.promotion_info}}</p>
             </div>
             <el-button type="text" slot="reference" class="menu-wrap">
@@ -139,6 +145,21 @@
 
   .menu-item:hover {
     background-color: #f5f5f5;
+
+  }
+
+  .menu-item div.rstblock-title:hover {
+    color: #0089dc;
+  }
+
+  .fee-wrap {
+    margin: 3px 5px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    font-size: 12px;
+    color: #000;
+    background-color: #eee;
   }
 
   .rstblock-logo {
@@ -151,6 +172,11 @@
 
   .rstblock-logo > span {
     margin-top: 5px;
+  }
+
+  .text-red {
+    color: #f00;
+    font-size: 12px;
   }
 
   .rstblock-content {

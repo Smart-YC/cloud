@@ -65,6 +65,13 @@
     border: 2px solid #e6e6e6 !important;
   }
 
+  .el-breadcrumb {
+    font-size: 14px;
+    line-height: 25px;
+    text-align: center;
+    padding: 0 5px;
+  }
+
   .app-wrap {
     display: block;
     height: 60px;
