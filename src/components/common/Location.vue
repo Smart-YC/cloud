@@ -75,7 +75,10 @@
     height: 60px;
     line-height: 60px;
   }
-
+  .location>span:first-child {
+    color: #999;
+    margin-right: 5px;
+  }
   .location a {
     color: #0089dc;
   }
