@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1><a href="/" hardjump="" class="topbar-logo icon-logo"><span>饿了么</span></a></h1>
+    <h1 class="topbar-logo"><i class=" iconfont  icon-changyonglogo40"></i>饿了吗</h1>
     <el-menu
       :default-active="activeIndex"
       class="el-menu-demo"
@@ -32,7 +32,8 @@
       <li class="phone-use">
         <el-button type="text" v-popover:popover><i class="iconfont  icon-shouji1"></i> 手机应用</el-button>
       </li>
-      <li><a href=""><i class="iconfont  icon-iconfontzhizuobiaozhun023104"></i><span class="user-bold"> 登录/注册</span></a>
+      <li><a href=""><i class="iconfont  icon-iconfontzhizuobiaozhun023104"></i><span
+        class="user-bold"> 登录/注册</span></a>
       </li>
     </ul>
   </div>

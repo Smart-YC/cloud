@@ -138,6 +138,10 @@
     height: 38px;
   }
 
+  .excavator-filter-item:hover {
+    background-color: #f6f6f6;
+  }
+
   .excavator-filter a {
     color: #666;
   }
