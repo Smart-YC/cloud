@@ -9,7 +9,7 @@
             <a href="#" class="text-white toolbar-cartbtn"><i class="iconfont icon-dingdan"></i></a>
           </el-tooltip>
           <div class="toolbar-separator"></div>
-          <el-tooltip class="item" effect="dark" content="购物车" placement="left">
+          <el-tooltip :disabled="true" class="item" effect="dark" content="购物车" placement="left">
             <a href="#" class="text-white toolbar-cartbtn" @click="toggleShop()"><i class="iconfont icon-gouwuche"></i>购物车</a>
           </el-tooltip>
           <div class="toolbar-separator"></div>
@@ -26,7 +26,8 @@
           <div ng-controller="sidebarCartCtrl" class="ng-scope">
             <div class="sidebarcart-caption"><a ng-href="/shop/156840502" ng-bind="cart.restaurant_info.name || '购物车'"
                                                 ubt-click="394" class="ng-binding" href="/shop/156840502">购物车</a>
-              <i class="icon-angle-double-right iconfont icon-shuangjiantouyou" @click="toggleShop()"></i></div><!-- ngIf: loading -->
+              <i class="icon-angle-double-right iconfont icon-shuangjiantouyou" @click="toggleShop()"></i></div>
+            <!-- ngIf: loading -->
             <!-- ngIf: pieces -->
             <div class="sidebarcart-summary ng-hide" ng-show="pieces"><p>共 <span class="color-stress ng-binding"
                                                                                  ng-bind="pieces">0</span> 份，总计 <span
