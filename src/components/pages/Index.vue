@@ -2,7 +2,7 @@
   <div class="home">
     <Location></Location>
     <Classify></Classify>
-    <div class="content-menu">
+    <div class="content-menu" v-loading="loading" element-loading-text="正在载入更多商家...">
       <el-row>
         <el-col :span="6" v-for="(item,index) in list" :key="index" class="menu-item">
           <el-popover
@@ -18,7 +18,7 @@
               </p>
               <div class="fee-wrap">
                 <el-breadcrumb separator="|">
-                  <el-breadcrumb-item>{{item.piecewise_agent_fee.description}}</el-breadcrumb-item>
+                  <el-breadcrumb-item><span>{{item.piecewise_agent_fee.description}}</span></el-breadcrumb-item>
                   <el-breadcrumb-item>平均 <span class="text-red">{{item.order_lead_time}}</span>分钟到达</el-breadcrumb-item>
                 </el-breadcrumb>
               </div>
@@ -66,7 +66,8 @@
     name: "home",
     data() {
       return {
-        list: []
+        list: [],
+        loading: true
       }
     },
     mounted: function () {
@@ -87,6 +88,7 @@
           function (res) {
             // 处理成功的结果
             console.log(res);
+            v.loading = false;
             let data = JSON.parse(res.bodyText);
             for (let i in data) {
               v.list.push(data[i]);
@@ -113,6 +115,7 @@
   .content-menu {
     border: 1px solid #e6e6e6;
     background-color: #fff;
+    min-height: 140px;
   }
 
   a {

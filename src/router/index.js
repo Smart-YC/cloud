@@ -8,6 +8,7 @@ import Service from '@/components/pages/Service'
 Vue.use(Router);
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',//默认页面
