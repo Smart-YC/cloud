@@ -1,5 +1,7 @@
 <template>
-  <div class="order">订单</div>
+  <div class="order">
+    <p>{{$route.name}}</p>
+  </div>
 </template>
 
 <script>

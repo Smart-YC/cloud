@@ -1,14 +1,15 @@
 <template>
-  <div class="join">
-   <p>{{$route.name}}</p>
+  <div>
+    <p>{{$route.params.username}}</p>
   </div>
 </template>
 
 <script>
   export default {
-    name: "Join"
+    name: "Catefood"
   }
 </script>
 
 <style scoped>
+
 </style>

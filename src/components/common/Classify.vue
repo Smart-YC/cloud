@@ -4,87 +4,13 @@
       <img src="../../assets/images/main/takeout.408a87.png" alt="谁来拿外卖" width="186" height="55">
     </div>
     <div class="excavator-filter ng-scope" ng-if="rstCategories.length"><span class="excavator-filter-name">商家分类:</span>
-      <!-- ngRepeat: category in rstCategories --><a class="excavator-filter-item ng-binding ng-scope active"
-                                                     href="javascript:" ng-repeat="category in rstCategories"
-                                                     ng-class="{'focus': clickedCategory === category.id &amp;&amp; (!clickedCategory || clickedCategory < 0) , 'active': activeCategory === category.id, 'premium': category.id === -10001 &amp;&amp; !pumStream}"
-                                                     ng-bind="category.name" ng-click="changeCategory(category)"
-                                                     ubt-click="380">全部商家</a>
-      <!-- end ngRepeat: category in rstCategories --><a class="excavator-filter-item ng-binding ng-scope"
-                                                         href="javascript:" ng-repeat="category in rstCategories"
-                                                         ng-class="{'focus': clickedCategory === category.id &amp;&amp; (!clickedCategory || clickedCategory < 0) , 'active': activeCategory === category.id, 'premium': category.id === -10001 &amp;&amp; !pumStream}"
-                                                         ng-bind="category.name" ng-click="changeCategory(category)"
-                                                         ubt-click="380">美食</a>
-      <!-- end ngRepeat: category in rstCategories --><a class="excavator-filter-item ng-binding ng-scope"
-                                                         href="javascript:" ng-repeat="category in rstCategories"
-                                                         ng-class="{'focus': clickedCategory === category.id &amp;&amp; (!clickedCategory || clickedCategory < 0) , 'active': activeCategory === category.id, 'premium': category.id === -10001 &amp;&amp; !pumStream}"
-                                                         ng-bind="category.name" ng-click="changeCategory(category)"
-                                                         ubt-click="380">快餐便当</a>
-      <!-- end ngRepeat: category in rstCategories --><a class="excavator-filter-item ng-binding ng-scope"
-                                                         href="javascript:" ng-repeat="category in rstCategories"
-                                                         ng-class="{'focus': clickedCategory === category.id &amp;&amp; (!clickedCategory || clickedCategory < 0) , 'active': activeCategory === category.id, 'premium': category.id === -10001 &amp;&amp; !pumStream}"
-                                                         ng-bind="category.name" ng-click="changeCategory(category)"
-                                                         ubt-click="380">特色菜系</a>
-      <!-- end ngRepeat: category in rstCategories --><a class="excavator-filter-item ng-binding ng-scope"
-                                                         href="javascript:" ng-repeat="category in rstCategories"
-                                                         ng-class="{'focus': clickedCategory === category.id &amp;&amp; (!clickedCategory || clickedCategory < 0) , 'active': activeCategory === category.id, 'premium': category.id === -10001 &amp;&amp; !pumStream}"
-                                                         ng-bind="category.name" ng-click="changeCategory(category)"
-                                                         ubt-click="380">异国料理</a>
-      <!-- end ngRepeat: category in rstCategories --><a class="excavator-filter-item ng-binding ng-scope"
-                                                         href="javascript:" ng-repeat="category in rstCategories"
-                                                         ng-class="{'focus': clickedCategory === category.id &amp;&amp; (!clickedCategory || clickedCategory < 0) , 'active': activeCategory === category.id, 'premium': category.id === -10001 &amp;&amp; !pumStream}"
-                                                         ng-bind="category.name" ng-click="changeCategory(category)"
-                                                         ubt-click="380">小吃夜宵</a>
-      <!-- end ngRepeat: category in rstCategories --><a class="excavator-filter-item ng-binding ng-scope"
-                                                         href="javascript:" ng-repeat="category in rstCategories"
-                                                         ng-class="{'focus': clickedCategory === category.id &amp;&amp; (!clickedCategory || clickedCategory < 0) , 'active': activeCategory === category.id, 'premium': category.id === -10001 &amp;&amp; !pumStream}"
-                                                         ng-bind="category.name" ng-click="changeCategory(category)"
-                                                         ubt-click="380">甜品饮品</a>
-      <!-- end ngRepeat: category in rstCategories --><a class="excavator-filter-item ng-binding ng-scope"
-                                                         href="javascript:" ng-repeat="category in rstCategories"
-                                                         ng-class="{'focus': clickedCategory === category.id &amp;&amp; (!clickedCategory || clickedCategory < 0) , 'active': activeCategory === category.id, 'premium': category.id === -10001 &amp;&amp; !pumStream}"
-                                                         ng-bind="category.name" ng-click="changeCategory(category)"
-                                                         ubt-click="380">果蔬生鲜</a>
-      <!-- end ngRepeat: category in rstCategories --><a class="excavator-filter-item ng-binding ng-scope"
-                                                         href="javascript:" ng-repeat="category in rstCategories"
-                                                         ng-class="{'focus': clickedCategory === category.id &amp;&amp; (!clickedCategory || clickedCategory < 0) , 'active': activeCategory === category.id, 'premium': category.id === -10001 &amp;&amp; !pumStream}"
-                                                         ng-bind="category.name" ng-click="changeCategory(category)"
-                                                         ubt-click="380">商店超市</a>
-      <!-- end ngRepeat: category in rstCategories --><a class="excavator-filter-item ng-binding ng-scope"
-                                                         href="javascript:" ng-repeat="category in rstCategories"
-                                                         ng-class="{'focus': clickedCategory === category.id &amp;&amp; (!clickedCategory || clickedCategory < 0) , 'active': activeCategory === category.id, 'premium': category.id === -10001 &amp;&amp; !pumStream}"
-                                                         ng-bind="category.name" ng-click="changeCategory(category)"
-                                                         ubt-click="380">鲜花绿植</a>
-      <!-- end ngRepeat: category in rstCategories --><a class="excavator-filter-item ng-binding ng-scope"
-                                                         href="javascript:" ng-repeat="category in rstCategories"
-                                                         ng-class="{'focus': clickedCategory === category.id &amp;&amp; (!clickedCategory || clickedCategory < 0) , 'active': activeCategory === category.id, 'premium': category.id === -10001 &amp;&amp; !pumStream}"
-                                                         ng-bind="category.name" ng-click="changeCategory(category)"
-                                                         ubt-click="380">医药健康</a>
-      <!-- end ngRepeat: category in rstCategories --><a class="excavator-filter-item ng-binding ng-scope"
-                                                         href="javascript:" ng-repeat="category in rstCategories"
-                                                         ng-class="{'focus': clickedCategory === category.id &amp;&amp; (!clickedCategory || clickedCategory < 0) , 'active': activeCategory === category.id, 'premium': category.id === -10001 &amp;&amp; !pumStream}"
-                                                         ng-bind="category.name" ng-click="changeCategory(category)"
-                                                         ubt-click="380">早餐</a>
-      <!-- end ngRepeat: category in rstCategories --><a class="excavator-filter-item ng-binding ng-scope"
-                                                         href="javascript:" ng-repeat="category in rstCategories"
-                                                         ng-class="{'focus': clickedCategory === category.id &amp;&amp; (!clickedCategory || clickedCategory < 0) , 'active': activeCategory === category.id, 'premium': category.id === -10001 &amp;&amp; !pumStream}"
-                                                         ng-bind="category.name" ng-click="changeCategory(category)"
-                                                         ubt-click="380">午餐</a>
-      <!-- end ngRepeat: category in rstCategories --><a class="excavator-filter-item ng-binding ng-scope"
-                                                         href="javascript:" ng-repeat="category in rstCategories"
-                                                         ng-class="{'focus': clickedCategory === category.id &amp;&amp; (!clickedCategory || clickedCategory < 0) , 'active': activeCategory === category.id, 'premium': category.id === -10001 &amp;&amp; !pumStream}"
-                                                         ng-bind="category.name" ng-click="changeCategory(category)"
-                                                         ubt-click="380">下午茶</a>
-      <!-- end ngRepeat: category in rstCategories --><a class="excavator-filter-item ng-binding ng-scope"
-                                                         href="javascript:" ng-repeat="category in rstCategories"
-                                                         ng-class="{'focus': clickedCategory === category.id &amp;&amp; (!clickedCategory || clickedCategory < 0) , 'active': activeCategory === category.id, 'premium': category.id === -10001 &amp;&amp; !pumStream}"
-                                                         ng-bind="category.name" ng-click="changeCategory(category)"
-                                                         ubt-click="380">晚餐</a>
-      <!-- end ngRepeat: category in rstCategories --><a class="excavator-filter-item ng-binding ng-scope"
-                                                         href="javascript:" ng-repeat="category in rstCategories"
-                                                         ng-class="{'focus': clickedCategory === category.id &amp;&amp; (!clickedCategory || clickedCategory < 0) , 'active': activeCategory === category.id, 'premium': category.id === -10001 &amp;&amp; !pumStream}"
-                                                         ng-bind="category.name" ng-click="changeCategory(category)"
-                                                         ubt-click="380">夜宵</a>
-      <!-- end ngRepeat: category in rstCategories -->
+      <router-link
+        v-for="(item,index) in foodClassify" :key="index"
+        class="excavator-filter-item ng-binding ng-scope"
+        @click="selected(item)"
+        :class="{active: activeName == item}"
+        to="/Index/Allshop">{{item}}
+      </router-link>
       <div ng-show="subCategories" class="excavator-filter-subbox ng-hide">
         <!-- ngRepeat: subitem in subCategories --></div>
     </div>
@@ -93,7 +19,18 @@
 
 <script>
   export default {
-    name: "classify"
+    name: "classify",
+    data() {
+      return {
+        foodClassify: ['全部商家', '美食', '快餐便当', '特色菜系', '一国料理', '小吃夜宵', '甜品饮品', '果蔬生鲜', '商店超市', '鲜花绿植', '医药健康', '早餐', '午餐', '下午茶', '晚餐', '夜宵'],
+        activeName: '全部商家'
+      }
+    },
+    methods: {
+      selected: shopName => {
+        this.activeName = shopName
+      }
+    }
   }
 </script>
 

@@ -1,5 +1,7 @@
 <template>
-  <div class="service">我的客服</div>
+  <div class="service">
+    <p>{{$route.name}}</p>
+  </div>
 </template>
 
 <script>

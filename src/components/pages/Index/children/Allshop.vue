@@ -1,69 +1,62 @@
 <template>
-  <div class="home">
-    <Location></Location>
-    <Classify></Classify>
-    <div class="content-menu" v-loading="loading" element-loading-text="正在载入更多商家...">
-      <el-row>
-        <el-col :span="6" v-for="(item,index) in list" :key="index" class="menu-item">
-          <el-popover
-            placement="right-start"
-            width="250"
-            trigger="hover">
-            <div>
-              <h3>{{item.name}}</h3>
-              <p><span class="flavors-type" v-for="(value,n) in item.flavors" :key="n">{{value.name}}</span>
-              </p>
-              <hr>
-              <p v-for="(value,n) in item.supports" :key="n"><i class="flavors-label">{{value.icon_name}}</i>{{value.description}}
-              </p>
-              <div class="fee-wrap">
-                <el-breadcrumb separator="|">
-                  <el-breadcrumb-item><span>{{item.piecewise_agent_fee.description}}</span></el-breadcrumb-item>
-                  <el-breadcrumb-item>平均 <span class="text-red">{{item.order_lead_time}}</span>分钟到达</el-breadcrumb-item>
-                </el-breadcrumb>
-              </div>
-              <p>{{item.promotion_info}}</p>
+  <div class="content-menu" v-loading="loading" element-loading-text="正在载入更多商家...">
+    <el-row>
+      <el-col :span="6" v-for="(item,index) in list" :key="index" class="menu-item">
+        <el-popover
+          placement="right-start"
+          width="250"
+          trigger="hover">
+          <div>
+            <h3>{{item.name}}</h3>
+            <p><span class="flavors-type" v-for="(value,n) in item.flavors" :key="n">{{value.name}}</span>
+            </p>
+            <hr>
+            <p v-for="(value,n) in item.supports" :key="n"><i class="flavors-label">{{value.icon_name}}</i>{{value.description}}
+            </p>
+            <div class="fee-wrap">
+              <el-breadcrumb separator="|">
+                <el-breadcrumb-item><span>{{item.piecewise_agent_fee.description}}</span></el-breadcrumb-item>
+                <el-breadcrumb-item>平均 <span class="text-red">{{item.order_lead_time}}</span>分钟到达</el-breadcrumb-item>
+              </el-breadcrumb>
             </div>
-            <el-button type="text" slot="reference" class="menu-wrap">
-              <div class="rstblock-logo"><img
-                :src=[item.image_path]
-                width="70" height="70" :alt=item.name
-                class="rstblock-logo-icon">
-                <div class="elemeicon elemeicon-premiumsign rstblock-logo-premiumsign">
-                  <p>{{item.order_lead_time}}分钟</p>
-                </div>
+            <p>{{item.promotion_info}}</p>
+          </div>
+          <el-button type="text" slot="reference" class="menu-wrap">
+            <div class="rstblock-logo"><img
+              :src=[item.image_path]
+              width="70" height="70" :alt=item.name
+              class="rstblock-logo-icon">
+              <div class="elemeicon elemeicon-premiumsign rstblock-logo-premiumsign">
+                <p>{{item.order_lead_time}}分钟</p>
               </div>
-              <div class="rstblock-content">
-                <div class="rstblock-common rstblock-title">{{item.name}}</div>
-                <div class="rstblock-common">
-                  <el-rate
-                    v-model="item.rating"
-                    disabled
-                    text-color="#ff9900"
-                    score-template="{value}">
-                  </el-rate>
-                </div>
-                <div class="rstblock-common rstblock-cost">{{item.piecewise_agent_fee.description}}</div>
-                <div class="rstblock-common rstblock-activity">
-                  <i style="background:#fff;color:#999999;border:1px solid;font-size: 12px"
-                     v-for="(value,n) in item.supports" :key="n">{{value.icon_name}}</i>
-                </div>
+            </div>
+            <div class="rstblock-content">
+              <div class="rstblock-common rstblock-title">{{item.name}}</div>
+              <div class="rstblock-common">
+                <el-rate
+                  v-model="item.rating"
+                  disabled
+                  text-color="#ff9900"
+                  score-template="{value}">
+                </el-rate>
               </div>
-            </el-button>
-          </el-popover>
+              <div class="rstblock-common rstblock-cost">{{item.piecewise_agent_fee.description}}</div>
+              <div class="rstblock-common rstblock-activity">
+                <i style="background:#fff;color:#999999;border:1px solid;font-size: 12px"
+                   v-for="(value,n) in item.supports" :key="n">{{value.icon_name}}</i>
+              </div>
+            </div>
+          </el-button>
+        </el-popover>
 
-        </el-col>
-      </el-row>
-    </div>
+      </el-col>
+    </el-row>
   </div>
 </template>
 
 <script>
-  import Location from '@/components/common/Location'
-  import Classify from '@/components/common/Classify'
-
   export default {
-    name: "home",
+    name: "allshop",
     data() {
       return {
         list: [],
@@ -73,9 +66,6 @@
     mounted: function () {
       this.get_data();
     },
-    components: {
-      Location, Classify
-    },
     props: {
       popover: {
         default: 'value'
@@ -84,8 +74,8 @@
     methods: {
       get_data: function () {
         let v = this;
-        this.$http.get("static/resource/data.json").then(
-          function (res) {
+        this.$http.get("/static/resource/data.json").then(
+          res => {
             // 处理成功的结果
             console.log(res);
             v.loading = false;
@@ -93,7 +83,7 @@
             for (let i in data) {
               v.list.push(data[i]);
             }
-          }, function (res) {
+          }, res => {
             // 处理失败的结果
             console.group(res);
           }
@@ -107,11 +97,6 @@
 </script>
 
 <style scoped>
-  .home {
-    width: 100%;
-    clear: both;
-  }
-
   .content-menu {
     border: 1px solid #e6e6e6;
     background-color: #fff;
@@ -250,5 +235,4 @@
     background-color: #f63;
     white-space: nowrap;
   }
-
 </style>
