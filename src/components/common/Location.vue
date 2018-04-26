@@ -30,7 +30,7 @@
           navigator.geolocation.getCurrentPosition(this.showPosition, this.showError);
         }
         else {
-          v.locationMsg = "该浏览器不支持地理定位";
+          v.locationMsg = "地理定位不受这个浏览器的支持";
         }
       },
       showPosition(position) {
