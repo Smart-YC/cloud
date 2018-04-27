@@ -10,7 +10,7 @@
          href="javascript:void (0)"
          v-for="(item,index) in foodClassify" :key="index"
          @click="filterShopName(item,list)"
-         :class="{'active': activeName == item}">{{item}}
+         :class="{'active': activeName == item}">{{item.name}}
       </a>
     </div>
     <!--商家店铺-->
@@ -75,13 +75,14 @@
     name: "allshop",
     data() {
       return {
-        foodClassify: ['全部商家', '美食', '快餐便当', '特色菜系', '一国料理', '小吃夜宵', '甜品饮品', '果蔬生鲜', '商店超市', '鲜花绿植', '医药健康', '早餐', '午餐', '下午茶', '晚餐', '夜宵'],
-        activeName: '全部商家',
+        foodClassify: [],
+        activeName: '',
         list: [],
         loading: true
       }
     },
     mounted: function () {
+      this.getShopClassify();
       this.getShopName();
     },
     props: {
@@ -90,6 +91,26 @@
       }
     },
     methods: {
+      getShopClassify: function () {
+        let v = this;
+        this.$http.get("/static/resource/classify.json").then(
+          res => {
+            // 处理成功的结果
+            console.log(res);
+            v.loading = false;
+            let data = JSON.parse(res.bodyText);
+            for (let i in data) {
+              if (i == 0) {
+                v.activeName = data[i].name;
+              }
+              v.foodClassify.push(data[i]);
+            }
+          }, res => {
+            // 处理失败的结果
+            console.group(res);
+          }
+        );
+      },
       getShopName: function () {
         let v = this;
         this.$http.get("/static/resource/data.json").then(
