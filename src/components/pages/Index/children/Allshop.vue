@@ -1,56 +1,72 @@
 <template>
-  <div class="content-menu" v-loading="loading" element-loading-text="正在载入更多商家...">
-    <el-row>
-      <el-col :span="6" v-for="(item,index) in list" :key="index" class="menu-item">
-        <el-popover
-          placement="right-start"
-          width="250"
-          trigger="hover">
-          <div>
-            <h3>{{item.name}}</h3>
-            <p><span class="flavors-type" v-for="(value,n) in item.flavors" :key="n">{{value.name}}</span>
-            </p>
-            <hr>
-            <p v-for="(value,n) in item.supports" :key="n"><i class="flavors-label">{{value.icon_name}}</i>{{value.description}}
-            </p>
-            <div class="fee-wrap">
-              <el-breadcrumb separator="|">
-                <el-breadcrumb-item><span>{{item.piecewise_agent_fee.description}}</span></el-breadcrumb-item>
-                <el-breadcrumb-item>平均 <span class="text-red">{{item.order_lead_time}}</span>分钟到达</el-breadcrumb-item>
-              </el-breadcrumb>
-            </div>
-            <p>{{item.promotion_info}}</p>
-          </div>
-          <el-button type="text" slot="reference" class="menu-wrap">
-            <div class="rstblock-logo"><img
-              :src=[item.image_path]
-              width="70" height="70" :alt=item.name
-              class="rstblock-logo-icon">
-              <div class="elemeicon elemeicon-premiumsign rstblock-logo-premiumsign">
-                <p>{{item.order_lead_time}}分钟</p>
+  <div class="allshop">
+    <!--谁来拿外卖-->
+    <div class="place-container">
+      <img src="../../../../assets/images/main/takeout.408a87.png" alt="谁来拿外卖" width="186" height="55">
+    </div>
+    <!--商家分类-->
+    <div class="excavator-filter"><span class="excavator-filter-name">商家分类:</span>
+      <a class="excavator-filter-item"
+         href="javascript:void (0)"
+         v-for="(item,index) in foodClassify" :key="index"
+         @click="filterShopName(item,list)"
+         :class="{'active': activeName == item}">{{item}}
+      </a>
+    </div>
+    <!--商家店铺-->
+    <div class="content-menu" v-loading="loading" element-loading-text="正在载入更多商家...">
+      <el-row>
+        <el-col :span="6" v-for="(item,index) in list" :key="index" class="menu-item">
+          <el-popover
+            placement="right-start"
+            width="250"
+            trigger="hover">
+            <div>
+              <h3>{{item.name}}</h3>
+              <p><span class="flavors-type" v-for="(value,n) in item.flavors" :key="n">{{value.name}}</span>
+              </p>
+              <hr>
+              <p v-for="(value,n) in item.supports" :key="n"><i class="flavors-label">{{value.icon_name}}</i>{{value.description}}
+              </p>
+              <div class="fee-wrap">
+                <el-breadcrumb separator="|">
+                  <el-breadcrumb-item><span>{{item.piecewise_agent_fee.description}}</span></el-breadcrumb-item>
+                  <el-breadcrumb-item>平均 <span class="text-red">{{item.order_lead_time}}</span>分钟到达</el-breadcrumb-item>
+                </el-breadcrumb>
               </div>
+              <p>{{item.promotion_info}}</p>
             </div>
-            <div class="rstblock-content">
-              <div class="rstblock-common rstblock-title">{{item.name}}</div>
-              <div class="rstblock-common">
-                <el-rate
-                  v-model="item.rating"
-                  disabled
-                  text-color="#ff9900"
-                  score-template="{value}">
-                </el-rate>
+            <el-button type="text" slot="reference" class="menu-wrap">
+              <div class="rstblock-logo"><img
+                :src=[item.image_path]
+                width="70" height="70" :alt=item.name
+                class="rstblock-logo-icon">
+                <div class="elemeicon elemeicon-premiumsign rstblock-logo-premiumsign">
+                  <p>{{item.order_lead_time}}分钟</p>
+                </div>
               </div>
-              <div class="rstblock-common rstblock-cost">{{item.piecewise_agent_fee.description}}</div>
-              <div class="rstblock-common rstblock-activity">
-                <i style="background:#fff;color:#999999;border:1px solid;font-size: 12px"
-                   v-for="(value,n) in item.supports" :key="n">{{value.icon_name}}</i>
+              <div class="rstblock-content">
+                <div class="rstblock-common rstblock-title">{{item.name}}</div>
+                <div class="rstblock-common">
+                  <el-rate
+                    v-model="item.rating"
+                    disabled
+                    text-color="#ff9900"
+                    score-template="{value}">
+                  </el-rate>
+                </div>
+                <div class="rstblock-common rstblock-cost">{{item.piecewise_agent_fee.description}}</div>
+                <div class="rstblock-common rstblock-activity">
+                  <i style="background:#fff;color:#999999;border:1px solid;font-size: 12px"
+                     v-for="(value,n) in item.supports" :key="n">{{value.icon_name}}</i>
+                </div>
               </div>
-            </div>
-          </el-button>
-        </el-popover>
+            </el-button>
+          </el-popover>
 
-      </el-col>
-    </el-row>
+        </el-col>
+      </el-row>
+    </div>
   </div>
 </template>
 
@@ -59,12 +75,14 @@
     name: "allshop",
     data() {
       return {
+        foodClassify: ['全部商家', '美食', '快餐便当', '特色菜系', '一国料理', '小吃夜宵', '甜品饮品', '果蔬生鲜', '商店超市', '鲜花绿植', '医药健康', '早餐', '午餐', '下午茶', '晚餐', '夜宵'],
+        activeName: '全部商家',
         list: [],
         loading: true
       }
     },
     mounted: function () {
-      this.get_data();
+      this.getShopName();
     },
     props: {
       popover: {
@@ -72,7 +90,7 @@
       }
     },
     methods: {
-      get_data: function () {
+      getShopName: function () {
         let v = this;
         this.$http.get("/static/resource/data.json").then(
           res => {
@@ -89,14 +107,22 @@
           }
         );
       },
-      showPopover: function (id) {
-        this.popover = id;
+      filterShopName: function (active, shop) {
+        this.activeName = active;
+        var filterShop = shop.filter(x => {
+          return x.id == 1396077;
+        });
+        this.list = filterShop;
       }
     }
   }
 </script>
 
 <style scoped>
+  .allshop {
+    clear: both;
+  }
+
   .content-menu {
     border: 1px solid #e6e6e6;
     background-color: #fff;
@@ -113,6 +139,57 @@
 
   p {
     font-size: 12px;
+  }
+
+  .place-container {
+    text-align: right;
+    margin-bottom: -10px;
+    z-index: 1000;
+  }
+
+  .excavator-filter {
+    line-height: 26px;
+    padding: 10px 10px 10px 7em;
+    background-color: #fff;
+    position: relative;
+    font-size: 14px;
+    border: 1px solid #e6e6e6;
+    margin-bottom: 20px;
+  }
+
+  .excavator-filter-name {
+    position: absolute;
+    left: 10px;
+    top: 13px;
+    color: #999;
+  }
+
+  .excavator-filter-item.active {
+    line-height: 36px;
+    background-color: #f6f6f6;
+    border-radius: 0;
+    margin: 0;
+    padding: 0 16px;
+    height: 38px;
+  }
+
+  .excavator-filter-item:hover {
+    background-color: #f6f6f6;
+  }
+
+  .excavator-filter a {
+    color: #666;
+  }
+
+  .excavator-filter-item {
+    white-space: nowrap;
+    display: inline-block;
+    margin: 5px 6px;
+  }
+
+  .excavator-filter-item, .excavator-filter-name {
+    padding: 0 10px;
+    margin-right: 8px;
   }
 
   .menu-item {
