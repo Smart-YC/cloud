@@ -130,10 +130,14 @@
       },
       filterShopName: function (active, shop) {
         this.activeName = active;
-        var filterShop = shop.filter(x => {
-          return x.id == 1396077;
-        });
+        this.loading = true;
+        //条件进行过滤
+        // let filterShop = shop.filter(x => {
+        //   return x.id == 1396077;
+        // });
+        let filterShop = shop.sort();
         this.list = filterShop;
+        this.loading = false;
       }
     }
   }
