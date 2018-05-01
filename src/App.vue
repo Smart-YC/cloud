@@ -10,7 +10,9 @@
     <RightBar></RightBar>
     <!--内容区域-->
     <main class="content">
-      <router-view class="view"></router-view>
+      <transition name="fade" mode="out-in">
+        <router-view class="view"></router-view>
+      </transition>
     </main>
     <!--底部版本信息-->
     <div class="footer">
@@ -93,5 +95,16 @@
   .footer {
     margin-top: 20px;
     border-top: 1px solid #e6e6e6;
+  }
+
+  .fade-enter{
+    opacity: 0;
+  }
+  .fade-enter-active{
+    transition: opacity .5s;
+  }
+  .fade-leave-active{
+    opacity: 0;
+    transition: opacity .5s;
   }
 </style>

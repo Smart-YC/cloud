@@ -48,12 +48,15 @@ export default new Router({
     {
       path: '/Join',
       name: '加盟合作',
-      component: Join
+       component: Join,
+      alias:'/Service'
+     // redirect:'/' //重定向
     },
     {
       path: '/Service',
       name: '我的客服',
       component: Service
+
     },{
       path:'*',
       component:Error
