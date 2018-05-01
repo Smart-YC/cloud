@@ -16,7 +16,12 @@ export default new Router({
     {
       path: '/',//默认页面
       name: '首页',
-      component: Index
+      component: Index,
+      beforeEnter:(to ,from ,next)=> {
+        console.log(to);
+        console.log(from);
+        next({path:'/Index'});//允许往下跳转
+      }
     },
     {
       path: '/Index',

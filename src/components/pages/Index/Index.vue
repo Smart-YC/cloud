@@ -13,6 +13,14 @@
     components: {
       Location
     },
+    beforeRouteEnter:(to,from,next)=>{
+      console.log("进入模板");
+      next();
+    },
+    beforeRouteLeave:(to,from,next)=>{
+      console.log("离开模板");
+      next();
+    }
   }
 </script>
 
