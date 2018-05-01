@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Index from '@/components/pages/index/Index'
 import Catefood from '@/components/pages/index/children/Catefood'
 import Allshop from '@/components/pages/index/children/Allshop'
+import Error from '@/components/pages/Error'
 import Order from '@/components/pages/Order'
 import Join from '@/components/pages/Join'
 import Service from '@/components/pages/Service'
@@ -48,6 +49,9 @@ export default new Router({
       path: '/Service',
       name: '我的客服',
       component: Service
+    },{
+      path:'*',
+      component:Error
     }
   ]
 })
