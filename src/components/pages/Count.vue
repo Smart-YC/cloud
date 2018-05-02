@@ -1,18 +1,24 @@
 <template>
   <div>
     <h2>{{msg}}</h2>
-    <hr/>
+    <hr>
     <h3>{{count}}</h3>
     <div>
       <button @click="add(10)">+</button>
       <button @click="reduce">-</button>
+    </div>
+    <hr>
+    <h3>{{count}}</h3>
+    <div>
+      <button @click="addActions">+</button>
+      <button @click="reduceActions">-</button>
     </div>
   </div>
 </template>
 
 <script>
   import store from '@/vuex/store';
-  import {mapState, mapMutations} from 'vuex'
+  import {mapState, mapMutations, mapGetters, mapActions} from 'vuex'
 
   export default {
     name: "count",
@@ -29,8 +35,17 @@
     // computed: mapState({  //第二种方法
     //   count: state => state.count
     // })
-    computed: mapState(['count']),//第三种方法（最简单）
-    methods: mapMutations(['add', 'reduce']),
+    computed: {
+      ...mapState(['count']),
+      // count() {
+      //   return this.$store.getters.count;
+      // }
+      // ...mapGetters(['count'])
+    },//第三种方法（最简单）
+    methods: {
+      ...mapMutations(['add', 'reduce']),
+      ...mapActions(['addActions', 'reduceActions'])
+    },
     store
   }
 </script>

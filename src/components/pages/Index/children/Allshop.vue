@@ -76,7 +76,7 @@
     data() {
       return {
         foodClassify: [],
-        activeName: '',
+        activeName: '全部商家',
         list: [],
         loading: true
       }
