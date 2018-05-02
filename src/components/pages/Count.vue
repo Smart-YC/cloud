@@ -27,21 +27,21 @@
         msg: 'hello vuex'
       }
     },
-    // computed: { //第一种方法
-    //   count() {
-    //     return this.$store.state.count;
-    //   }
-    // },
+    computed: { //第一种方法
+      count() {
+        return this.$store.state.a.count;
+      }
+    },
     // computed: mapState({  //第二种方法
     //   count: state => state.count
     // })
-    computed: {
-      ...mapState(['count']),
-      // count() {
-      //   return this.$store.getters.count;
-      // }
-      // ...mapGetters(['count'])
-    },//第三种方法（最简单）
+    // computed: {
+    //   ...mapState(['count']),
+    // count() {
+    //   return this.$store.getters.count;
+    // }
+    // ...mapGetters(['count'])
+    // },//第三种方法（最简单）
     methods: {
       ...mapMutations(['add', 'reduce']),
       ...mapActions(['addActions', 'reduceActions'])

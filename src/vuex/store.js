@@ -30,6 +30,9 @@ const actions = {//异步
     commit('reduce');
   }
 };
-export default new Vuex.Store({
+const moduleA = {//模块组
   state, mutations, getters, actions
+};
+export default new Vuex.Store({
+  modules: {a: moduleA}
 })
