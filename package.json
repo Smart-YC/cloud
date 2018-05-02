@@ -1,7 +1,7 @@
 {
   "name": "cloud",
   "version": "1.0.0",
-  "description": "云售电后台管理系统",
+  "description": "仿饿了吗",
   "author": "songyingchun <1033641437@qq.com>",
   "private": true,
   "scripts": {

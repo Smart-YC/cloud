@@ -12,7 +12,7 @@
       :router="true"
       default-active="/Index">
       <el-menu-item index="/Index">首页</el-menu-item>
-      <el-menu-item index="/Order">我的订单</el-menu-item>
+      <el-menu-item index="/Count">我的订单</el-menu-item>
       <el-menu-item index="/Join">加盟合作</el-menu-item>
       <el-menu-item index="/Service">我的客服</el-menu-item>
     </el-menu>

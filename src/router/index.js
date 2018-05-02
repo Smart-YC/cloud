@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Index from '@/components/pages/index/Index'
 import Catefood from '@/components/pages/index/children/Catefood'
 import Allshop from '@/components/pages/index/children/Allshop'
+import Count from '@/components/pages/Count'
 import Error from '@/components/pages/Error'
 import Order from '@/components/pages/Order'
 import Join from '@/components/pages/Join'
@@ -41,9 +42,9 @@ export default new Router({
       }]
     },
     {
-      path: '/Order',
-      name: '我的订单',
-      component: Order
+      path: '/Count',
+      name: 'count',
+      component: Count
     },
     {
       path: '/Join',
