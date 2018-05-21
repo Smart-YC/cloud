@@ -174,6 +174,7 @@
 
   .excavator-filter {
     line-height: 26px;
+    min-height: 26px;
     padding: 10px 10px 10px 7em;
     background-color: #fff;
     position: relative;
@@ -210,6 +211,10 @@
     white-space: nowrap;
     display: inline-block;
     margin: 5px 6px;
+    transition: background-color 1s ;
+    -moz-transition: background-color 1s;
+    -webkit-transition: background-color 1s;
+    -o-transition: background-color 1s;
   }
 
   .excavator-filter-item, .excavator-filter-name {
@@ -220,6 +225,10 @@
   .menu-item {
     border-bottom: 1px #f5f5f5 solid;
     padding: 0 15px 0 15px;
+    transition: background-color 1s;
+    -moz-transition: background-color 1s;
+    -webkit-transition: background-color 1s;
+    -o-transition: background-color 1s;
   }
 
   .menu-wrap {
