@@ -73,7 +73,9 @@
     text-align: center;
     padding: 0 5px;
   }
-
+  .el-menu{
+   border-right: none;
+  }
   .app-wrap {
     display: block;
     height: 60px;

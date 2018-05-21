@@ -42,9 +42,9 @@ export default new Router({
       }]
     },
     {
-      path: '/Count',
-      name: 'count',
-      component: Count
+      path: '/Order',
+      name: 'order',
+      component: Order
     },
     {
       path: '/Join',

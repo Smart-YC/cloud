@@ -7,11 +7,11 @@
       @select="handleSelect"
       background-color="#1e89e0"
       text-color="#fff"
-      active-text-color="#1e89e0"
+      active-text-color="rgb(24, 110, 179)"
       :router="true"
       :default-active="$route.path">
       <el-menu-item index="/Index">首页</el-menu-item>
-      <el-menu-item index="/Count">我的订单</el-menu-item>
+      <el-menu-item index="/Order">我的订单</el-menu-item>
       <el-menu-item index="/Join">加盟合作</el-menu-item>
       <el-menu-item index="/Service">我的客服</el-menu-item>
     </el-menu>
