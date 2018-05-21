@@ -2,7 +2,7 @@
   <div class="allshop">
     <!--谁来拿外卖-->
     <div class="place-container">
-      <img src="../../../../assets/images/main/takeout.408a87.png" alt="谁来拿外卖" width="186" height="55">
+      <img src="/static/images/takeout.408a87.png" alt="谁来拿外卖" width="186" height="55">
     </div>
     <!--商家分类-->
     <div class="excavator-filter"><span class="excavator-filter-name">商家分类:</span>
@@ -76,7 +76,7 @@
     data() {
       return {
         foodClassify: [],
-        activeName: '',
+        activeName: '全部商家',
         list: [],
         loading: true
       }

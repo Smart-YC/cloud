@@ -2,7 +2,6 @@
   <div>
     <h1 class="topbar-logo"><i class=" iconfont  icon-changyonglogo40"></i>饿了吗</h1>
     <el-menu
-      :default-active="activeIndex"
       class="el-menu-demo"
       mode="horizontal"
       @select="handleSelect"
@@ -10,9 +9,9 @@
       text-color="#fff"
       active-text-color="#1e89e0"
       :router="true"
-      default-active="/Index">
+      :default-active="$route.path">
       <el-menu-item index="/Index">首页</el-menu-item>
-      <el-menu-item index="/Order">我的订单</el-menu-item>
+      <el-menu-item index="/Count">我的订单</el-menu-item>
       <el-menu-item index="/Join">加盟合作</el-menu-item>
       <el-menu-item index="/Service">我的客服</el-menu-item>
     </el-menu>
